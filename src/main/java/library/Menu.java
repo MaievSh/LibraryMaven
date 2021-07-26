@@ -8,22 +8,18 @@ import library.exceptions.PublishingException;
 import library.scientific.Classics;
 import library.scientific.Dictionary;
 import library.scientific.Encyclopedias;
-import library.scientific.ScientificBooks;
 import library.utils.Verification;
 import library.сhildish.PictureBooks;
 import library.сhildish.Tales;
-import library.Books;
-import library.exceptions.PublishingException;
-
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Set;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import library.utils.Verification;
+import org.apache.log4j.Logger;
+import library.utils.JsonWR;
 
 public class Menu {
-
+    private final static Logger LOGGER = Logger.getLogger(Menu.class);
     public Menu() {
 
     }
@@ -251,7 +247,6 @@ public class Menu {
 
     public void customExceptions() {
 
-
         {
             int index = 0;
             do {
@@ -294,4 +289,19 @@ public class Menu {
             while (index < 10);
         }
     }
+    public void javaToJson(){
+        Tales cinderella = new Tales("Daisy Fisher", "cinderella", "is a folk tale about oppression and triumphant reward." +
+                " Thousands of variants are known throughout the world. " +
+                "The protagonist is a young woman living in forsaken circumstances that are suddenly changed to remarkable fortune, with her ascension to the throne via marriage.", 1697, "good book");
+       JsonWR jsonAction = new JsonWR();
+        String jsonStr = jsonAction.JavaToJsonString(cinderella);
+        LOGGER.info(jsonStr);
+   }
+
+   public void convertJsonStrToPOJO(){
+        String jsonStr = "{\"author\":\"JessicaMeserve\",\"book\":beyondTheBurrow\",\"description\":Take a hop, skip and a jump into the big wide world with this beautifully illustrated picture book for babies and toddlers.\",\"publishing\":2018\"}";
+       JsonWR jsonAction = new JsonWR();
+       PictureBooks beyondTheBurrow = jsonAction.convertJsonStrToPOJO(jsonStr);
+       LOGGER.info("Name Pojo: " +beyondTheBurrow.getBook());
+   }
 }

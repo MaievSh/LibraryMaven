@@ -57,6 +57,14 @@ public class Executor {
                     menu.customExceptions();
                     index = 10;
                     break;
+                case "7":
+                    menu.javaToJson();
+                    index = 10;
+                    break;
+                case "8":
+                    menu.convertJsonStrToPOJO();
+                    index = 10;
+                    break;
 
                 default:
                     System.out.print("Please, enter correct number of lesson.");

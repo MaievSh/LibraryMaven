@@ -1,7 +1,10 @@
 package library.сhildish;
 
-public class Tales extends library.сhildish.ChildishBooks {
+import library.Menu;
+import org.apache.log4j.Logger;
 
+public class Tales extends library.сhildish.ChildishBooks {
+    private final static Logger LOGGER = Logger.getLogger(Tales.class);
 
     public Tales (String author, String book, String description, int publishing){
         super(author, book, description, publishing);

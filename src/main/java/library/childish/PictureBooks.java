@@ -1,7 +1,10 @@
 package library.сhildish;
 
-public class PictureBooks extends library.сhildish.ChildishBooks {
+import library.Menu;
+import org.apache.log4j.Logger;
 
+public class PictureBooks extends library.сhildish.ChildishBooks {
+    private final static Logger LOGGER = Logger.getLogger(PictureBooks.class);
     private String Book;
     private String goodFeedback = "rate 6";
 
