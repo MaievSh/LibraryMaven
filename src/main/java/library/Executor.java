@@ -1,23 +1,19 @@
 package library;
 
-import library.entertaining.Action;
-import library.entertaining.Crime;
-import library.entertaining.PostApocalyptic;
-import library.entertaining.SciFi;
-import library.scientific.Dictionary;
-import library.scientific.Encyclopedias;
-import library.scientific.Classics;
-import library.сhildish.PictureBooks;
-import library.сhildish.Tales;
+import library.db.Connector;
+import library.db.DbOperation;
 
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Executor {
 
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, SQLException {
         Menu menu = new Menu();
+        Connector connector = new Connector();
+        DbOperation db = new DbOperation();
         menu.logIn();
 
         int index = 0;
@@ -29,7 +25,11 @@ public class Executor {
                     "3 - creatingInterface\n" +
                     "4 - polymorphism\n" +
                     "5 - exceptions\n"+
-                    "6 - customException" );
+                    "6 - customException\n"+
+                    "7 - Convert java to json file\n"+
+                    "8 - Convert json file to java\n"+
+                    "9 - Connect to BD\n"+
+                    "10 - Operation with DB" );
             String lesson = in.nextLine();
 
             switch (lesson) {
@@ -65,6 +65,15 @@ public class Executor {
                     menu.convertJsonStrToPOJO();
                     index = 10;
                     break;
+                case "9":
+                    connector.connect();
+                    index = 10;
+                    break;
+                case "10":
+                   db.dbOperation();
+                    index = 10;
+                    break;
+
 
                 default:
                     System.out.print("Please, enter correct number of lesson.");

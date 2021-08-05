@@ -1,5 +1,7 @@
 package library;
 
+import com.sun.jdi.connect.spi.Connection;
+import library.db.Connector;
 import library.entertaining.Action;
 import library.entertaining.Crime;
 import library.entertaining.PostApocalyptic;
@@ -11,12 +13,16 @@ import library.scientific.Encyclopedias;
 import library.utils.Verification;
 import library.сhildish.PictureBooks;
 import library.сhildish.Tales;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Set;
 import java.io.FileNotFoundException;
 import org.apache.log4j.Logger;
 import library.utils.JsonWR;
+import java.sql.PreparedStatement;
 
 public class Menu {
     private final static Logger LOGGER = Logger.getLogger(Menu.class);
@@ -299,9 +305,16 @@ public class Menu {
    }
 
    public void convertJsonStrToPOJO(){
-        String jsonStr = "{\"author\":\"JessicaMeserve\",\"book\":beyondTheBurrow\",\"description\":Take a hop, skip and a jump into the big wide world with this beautifully illustrated picture book for babies and toddlers.\",\"publishing\":2018\"}";
        JsonWR jsonAction = new JsonWR();
-       PictureBooks beyondTheBurrow = jsonAction.convertJsonStrToPOJO(jsonStr);
-       LOGGER.info("Name Pojo: " +beyondTheBurrow.getBook());
+        String jsonStr = "{\n" +
+                "  \"publishing\": 2018,\n" +
+                "  \"author\" : \"JessicaMeserve\",\n" +
+                "  \"book\" : \"beyondTheBurrow\"\n" +
+                "}";
+       PictureBooks beyondTheBurrow1 = jsonAction.convertJsonStrToPOJO(jsonStr);
+       LOGGER.info("Name Pojo: " +beyondTheBurrow1.getBook());
+       LOGGER.info("Name Pojo: " +beyondTheBurrow1.getAuthor());
+       LOGGER.info("Name Pojo: " +beyondTheBurrow1.getPublishing());
    }
+
 }

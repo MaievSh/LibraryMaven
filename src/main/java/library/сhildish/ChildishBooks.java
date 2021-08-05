@@ -6,6 +6,7 @@ import library.exceptions.PublishingException;
 import org.apache.log4j.Logger;
 
 public abstract class ChildishBooks implements Books {
+
     private final static Logger LOGGER = Logger.getLogger(ChildishBooks.class);
     private String author;
     private String book;

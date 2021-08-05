@@ -1,0 +1,11 @@
+2021-08-04 23:49:07 INFO  JsonWR:30 - convert to POJO, finished!
+2021-08-04 23:49:07 INFO  Menu:317 - Name Pojo: Fox
+2021-08-04 23:49:07 INFO  Menu:318 - Name Pojo: Bob
+2021-08-04 23:49:07 INFO  Menu:319 - Name Pojo: 2018
+2021-08-04 23:49:59 INFO  JsonWR:30 - convert to POJO, finished!
+2021-08-04 23:49:59 INFO  Menu:316 - Name Pojo: Fox
+2021-08-04 23:49:59 INFO  Menu:317 - Name Pojo: Bob
+2021-08-04 23:49:59 INFO  Menu:318 - Name Pojo: 2018
+2021-08-04 23:57:53 INFO  JsonWR:30 - convert to POJO, finished!
+2021-08-04 23:57:53 INFO  Menu:315 - Name Pojo: beyondTheBurrow
+2021-08-04 23:57:53 INFO  Menu:316 - Name Pojo: JessicaMeserve
