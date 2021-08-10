@@ -37,12 +37,12 @@ public class Verification {
     }
 
 
-    public void setSignificance(String path, String key, String value,String password, String valuepass){
+    public void setSignificance(String path, String login, String value,String password, String valuePass){
         Properties properties =new Properties();
         try {
             FileOutputStream file = new FileOutputStream(path);
-            properties.setProperty(key, value);
-            properties.setProperty(password,valuepass);
+            properties.setProperty(login, value);
+            properties.setProperty(password,valuePass);
             properties.store(file,"");
             file.close();
         }

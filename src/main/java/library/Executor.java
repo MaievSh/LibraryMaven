@@ -1,7 +1,9 @@
 package library;
 
+import library.dao.DAOCrimeBooks;
 import library.db.Connector;
 import library.db.DbOperation;
+import library.entertaining.Crime;
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
@@ -14,7 +16,8 @@ public class Executor {
         Menu menu = new Menu();
         Connector connector = new Connector();
         DbOperation db = new DbOperation();
-        menu.logIn();
+        //menu.logIn();
+        DAOCrimeBooks daoCrimeBooks = new DAOCrimeBooks();
 
         int index = 0;
         do {
@@ -66,11 +69,23 @@ public class Executor {
                     index = 10;
                     break;
                 case "9":
-                    connector.connect();
+                    connector.authorisationDB();
                     index = 10;
                     break;
                 case "10":
+                    connector.connect();
+                    index = 10;
+                    break;
+                case "11":
                    db.dbOperation();
+                    index = 10;
+                    break;
+                case "12":
+                    daoCrimeBooks.printAllСrimeBooks();
+                    index = 10;
+                    break;
+                case "13":
+                    //daoCrimeBooks.insertCrimeBook(Crime crimeBook);
                     index = 10;
                     break;
 

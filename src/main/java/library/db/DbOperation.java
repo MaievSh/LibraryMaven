@@ -27,7 +27,7 @@ import java.sql.PreparedStatement;
 public class DbOperation {
 
     public void dbOperation() {
-        String query = "INSERT INTO sciFiBooks (author,book,description,publishing)" + " values ('Kek','kek2','lol','2021')";
+        String query = "INSERT INTO sciFiBooks (author,book,description,publishing)" + " values ('Mary Shelley','Frankenstein','It is a pro-science novel that at its heart shows Dr Frankenstein as the callous fiend of the story, who created a being and was not willing to accept responsibility for his actions.','1818')";
         Connector conn = new Connector();
         try{
             PreparedStatement pst = conn.connect().prepareStatement(query);
@@ -38,4 +38,5 @@ public class DbOperation {
             System.out.println(ex.getMessage());
         }
    }
-}
+    }
+

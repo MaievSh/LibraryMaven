@@ -17,36 +17,7 @@ public class PictureBooks extends library.сhildish.ChildishBooks {
         super(author, book, description, publishing);
     }
 
-    public void setAuthor (String author) {
-        this.author = author;
-    }
 
-    public String getAuthor () {
-        return this.author;
-    }
-
-    public void setBook (String book) {
-        this.book = book;
-    }
-
-    public String getBook () {
-        return this.book;
-    }
-    public void setDescription (String description) {
-        this.description = description;
-    }
-
-    public String getDescription () {
-        return this.description;
-    }
-
-    public void setPublishing(int publishing) {
-        this.publishing = publishing;
-    }
-
-    public int getPublishing() {
-        return this.publishing;
-    }
     public PictureBooks(){
 
     }
